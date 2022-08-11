@@ -1,6 +1,8 @@
 import React from "react";
 import clsx from "clsx";
 
+import { DISTANCE } from "../utils/constants";
+
 import styles from "./HorseCard.module.css";
 
 const HorseCard = ({ id, name, distance }) => {
@@ -8,9 +10,8 @@ const HorseCard = ({ id, name, distance }) => {
     <div
       className={clsx({
         [styles.container]: true,
-        [styles.winner]: distance === 1000,
+        [styles.winner]: distance === DISTANCE,
       })}
-      key={id}
     >
       {distance === 1000 && <p className={styles.label}>Winner</p>}
       <h1>{name} </h1>
